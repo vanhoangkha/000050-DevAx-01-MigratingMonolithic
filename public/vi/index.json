@@ -1,0 +1,148 @@
+[
+{
+	"uri": "/vi/",
+	"title": "Chuyển đổi Ứng dụng Monolith",
+	"tags": [],
+	"description": "",
+	"content": "Chuyển đổi Ứng dụng Monolith Trong bài thực hành này, bạn sẽ tìm hiểu cách triển khai ứng dụng web TravelBuddy để chạy trên AWS\nBạn sẽ học cách sử dụng AWS SDKs để truy vấn và thao tác với môi trường AWS thông qua code thông qua 2 bài tập.\nNội dung Sau khi hoàn thành bài thực hành, bạn sẽ có thể:\n Sử dụng AWS Console để triển khai và xác minh các tài nguyên AWS sử dụng AWS CloudFormation template. Sử dụng công cụ AWS Tools cho Eclipse để triển khai ứng dụng Java tới môi trường Elastic Beanstalk. Cài đặt và cấu hình công cụ AWS Elastic Beanstalk CLI Sử dụng AWS Elastic Beanstalk CLI để triển khai bản cập nhật tới một môi trường Elastic Beanstalk đã có. Sử dụng AWS SDK để truy vấn và chỉnh sửa môi trường AWS environment thông qua code  Kiến thức kỹ thuật cần có Để có thể hoàn thành bài thực hành này, bạn nên làm quen với môi trường phát triển ứng dụng Eclipse, ngôn ngữ lập trình Java, ngôn ngữ dòng lệnh/terminal.\nMôi trường Tất cả tài nguyên cần thiết để bắt đầu bài thực hành được cung cấp trong CloudFomation template, sử dụng template này để khởi tạo các tài nguyên cho bài thực hành. Sơ đồ sau mô tả các tài nguyên được triển khai trong bài thực hành.\nNội dung  Chuẩn bị Kiểm tra tại máy chủ cục bộ Triển khai ứng dụng Cập nhật ứng dụng Truy vấn API Kết luận Tham khảo  "
+},
+{
+	"uri": "/vi/1-prerequisites/",
+	"title": "Chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Chào mừng đến với học phần đầu tiên trong hội thảo này! Mô-đun này liên quan đến việc có được truy cập vào môi trường nhà phát triển mà chúng tôi đã cung cấp cho bạn. Môi trường dành cho nhà phát triển chứa tất cả phần mềm và quyền truy cập mạng cần thiết để giúp bạn thiết lập và thực thi bài thực hành.\nMục đích chính của hội thảo này là tìm hiểu nội dung trong từng mô-đun, không phải thiết lập máy tại môi trường cục bộ của bạn. Bài thực hành sẽ cung cấp môi trường được thiết lập sẵn\nNội dung\n Chủ đề được bao gồm Môi trường phát triển  Chủ đề được bao gồm Sau bài thực hành này, bạn sẽ có thể:\nKết nối tới một máy ảo đang chạy windows.\nMôi trường phát triển Môi trường yêu cầu trong bài thực hành bao gồm các tài nguyên sau:\n Java 8 JDK Apache Maven Eclipse IDE for Java EE Developers Tomcat 9 AWS Toolkit for eclipse AWS CLI Elastic Beanstalk CLI  "
+},
+{
+	"uri": "/vi/1-prerequisites/1-create-environment/",
+	"title": "Chuẩn bị môi trường",
+	"tags": [],
+	"description": "",
+	"content": "Chuẩn bị môi trường Trong bài thực hành này, chúng ta sẽ sử dụng CloudFormation template đã cung cấp và cài đặt sẵn các tài nguyên cần thiết.\n Trước tiên, cần tạo một Keypair cho các máy ảo trong bài thực hành. Truy cập EC2 console, chọn Keypairs Chọn Create key pair  Nhập tên keypair KPforDevAxInstances, chọn định dạng tập tin pem và chọn Create key pair  Một cửa sổ xuất hiện để chọn nơi lưu trữ tập tin keypair. Bạn cần lưu trữ keypair này để truy cập vào máy ảo EC2 trong các bước sau Tải CloudFormation template \r\rAttachments\r\r\rModule1.template.yaml\r\r(39 ko)\r\r\r\r Truy cập AWS CloudFormation  Chọn Create stack, chọn With new resources (standard)  Tại mục Prerequisite - Prepare template chọn Template is ready Tại mục Template source, chọn Upload a template file, nhấp chọn Choose file và trỏ tới file template đã tải xuống ở bước 5. Chọn Next  Nhập tên stack tại mục Stack name Chọn keypair KPforDevAxInstances cho mục EEKeyPair và chọn Next  Chọn Next tại trang Configure stack options  Chọn Create stack  Chúng ta cần chờ một vài phút để các tài nguyên được khởi tạo và cấu hình. Tiếp theo hãy cùng khám phá các tài nguyên mà CloudFormation template đã định nghĩa.   "
+},
+{
+	"uri": "/vi/4-update-app/1-travelbuddy/",
+	"title": "Cập nhật ứng dụng TravelBuddy",
+	"tags": [],
+	"description": "",
+	"content": "Bây giờ chúng ta sẽ tạo một thay đổi đơn giản đổi với mã nguồn ứng dụng TravelBuddy.\nSửa đổi TravelBuddy  Trong Eclipse IDE, mở tập tin TravelBuddy/src/main/webapp/WEB-INF/views/index.jsp Tìm từ khóa Alpaca Thay đổi tiêu đề thành Go pack Lưu tập tin   Triển khai các thay đổi sử dụng AWS EBCLI Trong terminal, đảm bảo rằng bạn đang trong thư mục của TravelBuddy project Build phiên bản mới của ứng dụng TravelBuddy bằng Maven  cd \\\u0026lt;into the directory that has the project\u0026#39;s pom.xml file\\\u0026gt;\rmvn package\rChuyển sang thư mục chứa tập tin WAR và khởi tạo nội dung để triển khai Elastic Beanstalk bằng công cụ eb vừa cài đặt.  cd target\\\\travelbuddy\reb init --profile devaxacademy\rVới Select a default region, nhập số tương ứng với region đang chứa các tài nguyên cho bài thực hành này. Với Select an application to use, nhập số tương ứng với ứng dụng TravelBuddy và nhấn Enter. Bạn không cần lo lắng nếu xuất hiện thông báo TravelBuddy and hit enter. If you receive a message Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization. Chạy lệnh dưới đây để tải bản mới nhất của ứng dụng lên môi trường Beanstalk  eb deploy --profile devaxacademy\rBây giờ, hãy đợi cho việc triển khai hoàn tất. Bạn có thể theo dõi tiến trình trong cửa sổ terminal. Bạn cũng sẽ thấy tiến trình cập nhật liên quan trong bảng điều khiển AWS Elastic Beanstalk sau khi quá trình tải lên hoàn tất. Khi quá trình cập nhật kết thúc, hãy xác minh thay đổi bạn đã thực hiện đối với trang index.jsp hiện đã có trên trang web hiển thị công khai.\nLàm mới tab trình duyệt đang hiển thị trang web TravelBuddy và kiểm tra xem văn bản cập nhật có xuất hiện hay không\n"
+},
+{
+	"uri": "/vi/2-test-local/1-using-eclipse/",
+	"title": "Sử dụng Eclipse IDE",
+	"tags": [],
+	"description": "",
+	"content": "Sử dụng Eclipse IDE  Mở IDE Eclipse. Chọn File và chọn Import\u0026hellip; Dưới dòng Select an import wizard chọn Maven, chọn thư mục Existing Maven Projects và chọn Next  Chọn Browse và lựa chọn thư mục TravelBuddy, sau đó chọn Select Folder Chọn Finish Bạn sẽ cần phải đợi Maven tải xuống tất cả các tài nguyên cần thiết. Tỷ lệ phần trăm tải xuống hoàn tất sẽ được hiển thị ở góc dưới cùng bên phải. Đi đến Project Explorer và mở đường dẫn TravelBuddy/src/main/webapp/WEB-INF/spring/appServlet Mở file servlet-context.xml, xem mã nguồn dưới dạng Source và xác định vị trí của đoạn code bên dướiKhông chỉnh sửa đoạn mã nguồn trên, nhưng lưu ý rằng mã này sử dụng các biến môi trường để định cấu hình máy chủ và tên người dùng / mật khẩu cho cơ sở dữ liệu MySQL. Khi bạn thực thi mã này trên máy chủ, các biến môi trường này cho phép bạn, tại thời điểm thực thi, truy cập đúng máy chủ.\n\rBạn phải đặt các biến môi trường này nếu không ứng dụng sẽ bị lỗi.\n\rTrong bài thực hành này, bạn sẽ đặt các biến này để cho phép thực thi cục bộ với quyền truy cập từ xa vào RDS instance đang chạy cơ sở dữ liệu TravelBuddy. Sau đó, sau khi chuyển ứng dụng sang AWS Elastic Beanstalk, bạn sẽ học cách đặt các biến này làm thông số cấu hình trong môi trường Elastic Beanstalk.\n\r  Cấu hình biến môi trường của cơ sở dữ liệu để thực thi cục bộ Bây giờ bạn sẽ cấu hình máy chủ Tomcat v9.x cục bộ để chạy TravelBuddy trên máy tính cục bộ dùng để phát triển mã nguồn.\n9. Trong Eclipse, chọn Window \u0026gt; Show view \u0026gt; Servers. Bạn có thể cần chọn Other… để chọn chế độ xem Servers nếu nó không được cung cấp trong danh sách ngay từ đầu. 10. Trong cửa sổ Servers , chọn No servers are available. Click this link to create a new server…\n11. Mở Apache, chọn Tomcat v9.x Server, và chọn Next. 12. Chọn Browse\u0026hellip; và trỏ tới thư mục cài đặt Tomcat v9.x Server. Trong workspace, máy chủ Tomcat được đặt trong thư mục ẩn, vì vậy hãy sao chép và dán đường dẫn sau vào thanh địa chỉ C:\\ProgramData\\Tomcat9, sau đó nhấp vào Select Folder\n13. Chọn Finish 14. Trong Project Explorer, mở Servers \u0026gt; Tomcat v9.x Server at localhost-config.\n15. Mở tập tin context.xml và dán đoạn mã nguồn sau vào trước dòng cuối()\n16. Thay bằng giá trị của RDS Endpoint và lưu file lại 17. Click chuột phải vào thư mục project và chọn Run As\u0026hellip;, chọn Run on Server. Nếu không thấy Run on Server, click chuột phải vào thư mục project, chọn Maven và chọn Update Project\u0026hellip; và chọn OK.\n18. Chọn Tomcat v9.0 server và chọn Finish.\n19. Ứng dụng sẽ khởi động trong Java Spring giống như một ứng dụng Spring bình thường. Bạn sẽ thấy các thông báo xuất hiện trong cửa sổ bảng điều khiển, bao gồm việc khám phá các Request Handler Mappings cho các đường dẫn khác nhau được ứng dụng hiển thị.\nTrong giây lát, trình duyệt tích hợp IDE sẽ xuất hiện và bạn sẽ thấy ứng dụng TravelBuddy được mở. Ứng dụng sẽ hiển thị dữ liệu được truy xuất từ RDS instance đang chạy trong AWS. Bạn có thể truy cập tới ứng dụng web TravelBuddy bằng trình duyệt với địa chỉ http://localhost:8080/travelbuddy/\n\rLưu ý những điều dưới đây:\n Ứng dụng đang chạy trên máy chủ tomcat cục bộ của bạn Ứng dụng sử dụng cơ sở dữ liệu Amazon RDS MySQL.  "
+},
+{
+	"uri": "/vi/5-query-api/1-using-eclipse/",
+	"title": "Sử dụng Eclipse IDE",
+	"tags": [],
+	"description": "",
+	"content": "Sử dụng Eclipse IDE  Tải tập tin EC2Report.zip và giải nén. \r\rAttachments\r\r\rEC2Report.zip\r\r(19 ko)\r\r\r\r Trong Eclipse IDE, chọn File -\u0026gt; Import\u0026hellip; Dưới mục Select an import wizard chọn Maven, chọn Existing Maven Projects và chọn Next. Chọn Browse và trỏ tới thư mục EC2Report đã giải nén Xem đoạn code tại tập tin EC2Report/src/main/java/idevelop/samples/EC2Manager.java. Tìm ReportEC2Environment() method Xem cách các thông tin xác thực được truy xuất bằng ProfileCredentialsProvide() bằng cách chỉ định devaxacademy profile. Sau đó, credentials object được sử dụng trong AmazonEC2ClientBuilder. Đừng quên chỉnh sửa Region cho đúng với region đang thực hiện bài thực hành. Khởi chạy ứng dụng bằng cách nhấp chuột phải vào ứng dụng và chọn Run As -\u0026gt; JUnit Test.  Bạn sẽ nhận được kết quả tương tự như hình dưới. Kết quả nhận được hiển thị số lượng EC2 instance trong tài khoản người dùng IAM.   Bài tập tùy chọn Khám phá tập tin pom.xml và đảm bảo rằng bạn hiểu cách mà quản lý phụ thuộc hoạt động Thử sử dụng Bảng điều khiển AWS EC2 để tìm thông tin mà bạn đang thấy trong kết quả đầu ra từ bộ kiểm tra EC2Manager. Thông tin nào khác có trong bảng điều khiển AWS EC2 mà chúng tôi không hiển thị trong đầu ra thử nghiệm của mình? Ví dụ: xem lại instance object được trả về từ lời gọi describeInstancesRequest.getReservations() trong trình gỡ lỗi. Cập nhậtkết quả đầu ra của ứng dụng để hiển thị các Thẻ được liên kết với mỗi EC2 instance. Sau đó, trong bảng điều khiển AWS EC2, gán thẻ cho các máy ảo và xem chúng được hiển thị như thế nào trong kết quả đầu ra ứng dụng EC2Manager. Lập trình tạo một máy ảo mới trong tài khoản của bạn. Bạn cần xác định ImageId, Keypair và security groups. Tham khảo tài liệu hoặc sử dụng đoạn mã dưới đây  // At the top\rimport com.amazonaws.services.ec2.model.Instance;\rimport com.amazonaws.services.ec2.model.InstanceNetworkInterfaceSpecification;\rimport com.amazonaws.services.ec2.model.Reservation;\rimport com.amazonaws.services.ec2.model.RunInstancesRequest;\rimport com.amazonaws.services.ec2.model.RunInstancesResult;\r// In your method\rSystem.out.println(\u0026#34;Creating EC2 Server...\u0026#34;);\rRunInstancesRequest runInstancesRequest =\rnew RunInstancesRequest();\rrunInstancesRequest.withImageId(\u0026#34;ami-fd9cecc7\u0026#34;)\r.withInstanceType(\u0026#34;t2.small\u0026#34;)\r.withMinCount(1)\r.withMaxCount(1)\r.withKeyName(\u0026#34;devaxacademy\u0026#34;)\r.withNetworkInterfaces(new InstanceNetworkInterfaceSpecification()\r.withAssociatePublicIpAddress(true)\r.withDeviceIndex(0)\r.withSubnetId(\u0026#34;subnet-XXX\u0026#34;)\r.withGroups(\u0026#34;sg-XXX\u0026#34;));\rRunInstancesResult result = ec2.runInstances(runInstancesRequest);\r"
+},
+{
+	"uri": "/vi/3-deploy-app/1-deploy-to-eb/",
+	"title": "Triển khai trên ElasticBeanstalk",
+	"tags": [],
+	"description": "",
+	"content": "Bây giờ chúng ta biết rằng ứng dụng đang chạy tốt, bạn sẽ tạo một môi trường mới trong AWS bằng Elastic Beanstalk và lưu trữ ứng dụng web TravelBuddy ở đó để người dùng có thể truy cập vào Internet. Elastic Beanstalk loại bỏ gánh nặng cấp phép và quản lý các ứng dụng web-based. Ứng dụng của bạn có thể được di chuyển sang Elastic Beanstalk mà không cần bất kỳ sửa đổi nào, vì vậy đây là cách dễ nhất để di chuyển ứng dụng đang tồn tại. Đầu tiên, chúng ta cần xây dựng một tập tin WAR\n Dừng máy chủ Tomcat đang chạy. Trong Eclipse, chọn Window, chọn Show View và chọn Servers. Nhấp chuột phải và chọn Stop Nhấp chuột phải vào project TravelBuddy và chọn Export, chọn WAR File (dưới mục Web). Chọn Next.  Chọn Browse\u0026hellip; và chọn vị trí lưu phù hợp cho tập tin. Chọn Overwrite existing file nếu cần Chọn Finish Ngoài ra, nếu muốn, bạn có thể sử dụng Maven từ dòng lệnh để tạo tệp WAR, bằng cách sử dụng terminal theo hướng dẫn bên dưới:\n\r6. Sử dụng lệnh cd để di chuyển tới thư mục chứa tập tin pom.xml\n7. Sử dụng lệnh mvn package để đóng gói và tạo tập tin WAR, tập tin được tạo sẽ có tên travelbuddy.war và nằm trong thư mục target  Tạo ứng dụng Elastic beanstalk Truy cập AWS Console, vào AWS Elastic Beanstalk. Chọn Create Application  Nhập TravelBuddy tại mục Application name  Với Platform, chọn Tomcat  Với Application Code chọn Upload your code Trong cửa sổ Source code origin, chọn Local file và chọn Choose file Trỏ tới tập tin travelbuddy.war đã tạo ở bước trước và chọn Open Sau khi tập tin đã được tải lên thành công, chọn Configure more options.  Cửa sổ Configure Travelbuddy-env xuất hiện, với Configuration Presets chọn High availability. Điều này sẽ thay đổi cấu hình để hỗ trợ nhiều máy chủ web phía sau Elastic Load Balancer và triển khai auto-scaling  Cấu hình mạng Tìm thẻ Network và chọn Edit Trong trang Modify Network, tại mục VPC chọn CdkStack/DevAxNetworkVPC  Trong mục Load balancer settings, chọn Public cho visibility Trong mục Load balancer subnets, đánh dấu chọn 2 Public Subnets  Trong mục Instance subnets, đánh dấu chọn 2 Private subnets. Chọn Save   Cấu hình instances và bảo mật Tìm thẻ Security và chọn Edit Bên dưới mục Virtual Machine Permissions, với EC2 key pair, chọn key pair KPforDevAxInstances đã tạo. Chọn Save  Tìm thẻ Instances và chọn Edit Dưới mục EC2 security groups, chọn security group có tên DBSecurityGroup  Tìm thẻ Capacity và chọn Edit Dưới mục Instance type, chọn t3.medium và chọn Save   Cấu hình phần mềm Tìm thẻ Software và chọn Edit Cuộn xuống bảng Environment properties, và điền các thông tin như hình  Chọn Save  Tạo môi trường ElasticBeanstalk Chọn Create app  Elastic Beanstalk sẽ tiến hành tạo Môi trường mới để chạy trang web TravelBuddy của bạn. Quá trình này sẽ mất vài phút trong khi AWS Elastic Beanstalk tạo Elastic Load Balancer, EC2 instance, Launch configuration, Security Groups,\u0026hellip; Khi quá trình triển khai hoàn tất, chọn Environment URL bên cạnh URL ở đầu trang. Bạn sẽ được đưa tới trang web TravelBuddy được khởi chạy trên Elastic Beanstalk, với các chuyến bay và khách sạn đặc biệt được lấy từ cơ sở dữ liệu MySQL chạy trên cơ sở dữ liệu RDS-hosted MySQL.  "
+},
+{
+	"uri": "/vi/1-prerequisites/1-create-environment/1-vpc/",
+	"title": "VPC",
+	"tags": [],
+	"description": "",
+	"content": "VPC CloudFormation template định nghĩa một VPC gọi là DevAxNetworkLabVPC chứa 4 mạng con (network subnet) - 2 công khai (các máy ảo được gán với mạng con này có thể được truy cập trực tiếp từ internet) và 2 riêng tư (các mảy ảo được gán với mạng con nào sử dụng private IP và không thể được truy cập trực tiếp từ internet)\n Trong AWS Console, mở VPC Trong bảng điều khiển VPC, chọn Your VPCs, ta thấy một VPC được tạo có tên CdkStack/DevAxNetworkLabVPC.  Chọn Subnets và Filter với VPC CdkStack/LabVPC bạn sẽ thấy 4 subnets - 2 private và 2 public. Bài thực hành này sử dụng 2 Availibility Zones (AZs), mỗi AZs có một public và một private subnet. CloudFormation template cũng định nghĩa một Network Address Translation gateway (NAT gateway) thực hiện ánh xạ giữa địa chỉ IP nội bộ của các máy chủ định tuyến qua nó và địa chỉ IP bên ngoài, để các máy ảo dù có private IP nhưng vẫn có thể truy xuất dữ liệu từ Internet. Chọn NAT Gateways. Bạn sẽ thấy 2 NAT gateways, mỗi gateway cho một private subnet truy cập internet và các dịch vụ khác của AWS nhưng ngăn các dịch vụ bên ngoài truy cập trực tiếp với các tài nguyên bên trong các private subnet   "
+},
+{
+	"uri": "/vi/2-test-local/",
+	"title": "Kiểm tra tại máy chủ cục bộ",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước trước, bạn đã tải xuống file TravelBuddly chứa tất cả các tập tin để chạy ứng dụng nguyên khối, được triển khai dưới dạng một project Java. Trong phần này, bạn sẽ mở project, cập nhật cấu hình kết nối cơ sở dữ liệu, sau đó khởi chạy project trong môi trường phát triển cục bộ để kiểm tra xem project đang xây dựng và kết nối với cơ sở dữ liệu một cách chính xác.\n"
+},
+{
+	"uri": "/vi/1-prerequisites/1-create-environment/2-ec2/",
+	"title": "EC2",
+	"tags": [],
+	"description": "",
+	"content": "EC2 CloudFormation cũng tạo một workspace instance.\n Truy cập vào bảng điều khiển EC2 Chọn Instances, bạn sẽ thấy một EC2 instance đã được tạo sẵn Nếu bạn không thấy bất kỳ instance nào trong danh sách, vui lòng kiểm tra bảng điều khiển AWS CloudFormation. Các mod-xxxxxx stack status, phải là CREATE_COMPLETE trước khi một EC2 instance chạy\n\r Chọn tab Security, bạn sẽ thấy security group được gắn với máy ảo.  Chọn mở rộng tab Inbound rules bạn sẽ thấy các giao thức cũng như địa chỉ IP nguồn được phép truy cập từ những port này. Trong bài thực hành này, CloudFormation template tạo các quy tắc bảo mật cho phép tất cả các địa chỉ IP nguồn được phép kết nối tới. Bạn có thể chỉnh sửa và chỉ cho phép kết nối tới từ địa chỉ IP của bạn. Chọn tab Volumes, bạn sẽ thấy một EBS volume.   "
+},
+{
+	"uri": "/vi/1-prerequisites/2-remote-env-config-cli/",
+	"title": "Truy cập từ xa vào máy ảo Windows và cấu hình AWS CLI",
+	"tags": [],
+	"description": "",
+	"content": "Truy cập từ xa vào máy ảo Windows  Truy cập vào AWS EC2 và vào máy ảo DexAxWindowsHost Chọn Connect  Chọn tab RDP client  Chọn Getpassword để lấy mật khẩu đăng nhập vào máy ảo Chọn Browse và trỏ tới tập tin keypair đã lưu ở phần 1. Chọn Decrypt Password  Sao chép mật khẩu và chọn Download remote desktop file. Một file RDP sẽ được tải xuống, dùng để truy cập vào máy ảo Windows  Mở file RDP đã tải, nhập mật khẩu đã lưu ở bước 6 và chọn Connect. Một cảnh báo về xác minh chứng chỉ có thể xuất hiện, chọn Continue để tiếp tục.\nNhư vậy, ta đã kết nối được vào máy ảo Windows được tạo.  Cấu hình AWS CLI Mở và nhập đoạn sau vào trình soạn thảo  aws configure set profile.devaxacademy.region \u0026lt;your_region\u0026gt;\raws configure set profile.devaxacademy.aws_access_key_id \u0026lt;access_key_id\u0026gt;\raws configure set profile.devaxacademy.aws_secret_access_key \u0026lt;secret_access_key\u0026gt;\rNếu bạn đã có một bộ thông tin xác thực cho người dùng IAM có đặc quyền quản trị, bạn có thể sử dụng lại chúng cho các thông tin bên dưới trong bước tiếp theo. Nếu bạn chưa có thông tin xác thực truy cập, làm theo hướng dẫn tại đây để truy xuất chúng cho người dùng có đặc quyền quản trị để sử dụng trong bài thực hành này. Điền các giá trị của người dùng IAM vào câu lệnh aws configure:  \u0026lt;your_region\u0026gt; với Region code \u0026lt;access_key_id\u0026gt; với giá trị Access Key Id \u0026lt;secret_access_key\u0026gt; với giá trị Secret Access Key   Sao chép và dán đoạn code vào comand line và thực thi chúng  "
+},
+{
+	"uri": "/vi/3-deploy-app/",
+	"title": "Triển khai ứng dụng",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước trước, bạn đã khởi chạy project TravelBuddy trong môi trường cục bộ và kiểm tra tính chính xác trong việc xây dựng project và kết nối với cơ sở dữ liệu. Trong phần này, bạn sẽ triển khai ứng dụng trên ElasticBeanstalk.\n"
+},
+{
+	"uri": "/vi/1-prerequisites/3-database-setup/",
+	"title": "Cài đặt Database",
+	"tags": [],
+	"description": "",
+	"content": "Kết nối tới cơ sở dữ liệu  Truy cập máy ảo window, mở command prompt Nhập câu lệnh sau vào command prompt, thay \u0026lt;rds_host\u0026gt; bằng địa chỉ RDS endpoint  mysql -u root --password=labpassword -h \u0026lt;rds_host\u0026gt;\r\rMật khẩu cho MySQL instance là labpassword, hiển thị ở trên\n\rXem dữ liệu trong cơ sở dữ liệu Bạn sẽ thấy dấu nhắc lệnh mysql\u0026gt; Một cơ sở dữ liệu đã được cài đặt sẵn tên là travelbuddy. Chúng ta cần chọn cơ sở dữ liệu này bằng lệnh  use travelbuddy\rBạn sẽ thấy thông báo Database changed\nSử dụng câu lệnh sau để xem các table có trong cơ sở dữ liệu.  show tables;\rBạn sẽ thấy 2 table có trong database "
+},
+{
+	"uri": "/vi/1-prerequisites/1-create-environment/3-rds/",
+	"title": "RDS",
+	"tags": [],
+	"description": "",
+	"content": "RDS Dịch vụ cơ sở dữ liệu quan hệ của Amazon (Amazon RDS) giúp dễ dàng thiết lập, vận hành và mở rộng quy mô cơ sở dữ liệu quan hệ trên đám mây. Nó cung cấp khả năng tiết kiệm chi phí và có thể thay đổi kích thước trong khi tự động hóa các tác vụ quản trị tốn thời gian như cung cấp phần cứng, thiết lập cơ sở dữ liệu, vá lỗi và sao lưu.\n Truy cập bảng điều khiển RDS Chọn Database Bạn sẽ thấy một database mới được tạo, chọn vào database này Database được tạo đã được cấu hình với các dịch vụ VPC, Security Groups,\u0026hellip;   "
+},
+{
+	"uri": "/vi/4-update-app/",
+	"title": "Cập nhật ứng dụng",
+	"tags": [],
+	"description": "",
+	"content": "Bạn vừa triển khai trên môi trường AWS Elastic Beanstalk. Giả sử rằng người quản lý của bạn vừa thông báo cho bạn rằng chủ doanh nghiệp yêu cầu thay đổi ứng dụng và bạn cần thực hiện thay đổi mã nguồn ứng dụng, tạo tệp WAR mới và đẩy tệp đó vào môi trường ứng dụng Beanstalk.\nAWS Elastic Beanstalk có nhiều cách khác nhau để bạn có thể thực hiện việc này, nhưng nếu bạn chưa quen với Elastic Beanstalk, bạn có khả năng sử dụng phương pháp thủ công. Mặc dù phương pháp này có thể được sử dụng nhưng bạn cần phải viết tài liệu để bất kỳ nhân viên vận hành nào cũng có thể áp dụng các bản cập nhật một cách chính xác.\nMột phương pháp ưu tiên sẽ là tự động hóa việc triển khai, nhưng bạn sẽ tự động hóa việc triển khai Elastic Beanstalk như thế nào?\nĐể giải quyết vấn đề này, chúng tôi chuyển sang dòng lệnh và sử dụng một công cụ được tạo riêng để tự động hóa việc triển khai các ứng dụng Beanstalk.\n"
+},
+{
+	"uri": "/vi/1-prerequisites/4-project-files/",
+	"title": "Tải tập tin của Project",
+	"tags": [],
+	"description": "",
+	"content": "Tải tập tin của Project  Nhập chuột phải vào tập tin và chọn copy link address. \r\rAttachments\r\r\rTravelBuddy.zip\r\r(4866 ko)\r\r\r\r Truy cập máy ảo tạo workspace, mở trình duyệt web và dán đường dẫn đã sao chép vào thanh địa chỉ để tải xuống tập tin. Giải nén tập tin TravelBuddy.zip. Thư mục được giải nén sẽ được gọi là project trong các phần sau.  "
+},
+{
+	"uri": "/vi/5-query-api/",
+	"title": "Truy vấn API",
+	"tags": [],
+	"description": "",
+	"content": "Truy vấn API Trong phần này, bạn sẽ sử dụng Java SDK để kiểm tra môi trường AWS của mình và truy vấn thông tin máy ảo EC2. Điều này cung cấp cho bạn một số trải nghiệm về cách bạn có thể sử dụng AWS SDK để thao tác trực tiếp các tài nguyên trong tài khoản AWS của bạn, để tạo công cụ của riêng bạn hoặc kiểm soát việc tạo và quản lý tài nguyên theo chương trình.\n"
+},
+{
+	"uri": "/vi/6-conclustion/",
+	"title": "Kết luận",
+	"tags": [],
+	"description": "",
+	"content": "Chúc mừng! Bây giờ bạn đã thành công:  Đã sử dụng Bảng điều khiển AWS để triển khai và xác minh tài nguyên AWS bằng cách sử dụng AWS CloudFormation template. Đã sử dụng Công cụ AWS cho Eclipse để triển khai Ứng dụng Java trêntrên môi trường Elastic Beanstalk. Đã cài đặt và cấu hình công cụ AWS Elastic Beanstalk CLI. Đã sử dụng AWS Elastic Beanstalk CLI để triển khai bản cập nhật cho môi trường Elastic Beanstalk hiện có. Đã thử nghiệm với AWS SDK để truy vấn và thao tác với môi trường AWS.  "
+},
+{
+	"uri": "/vi/7-resources/",
+	"title": "Tham khảo",
+	"tags": [],
+	"description": "",
+	"content": "Tài liệu tham khảo:  6 strategies for migrating applications to the cloud AWS re:Invent 2018: PaaS – From Code to Running Application using AWS Elastic Beanstalk (DEV323) Cloud migrations customers Lift and shift application workloads Amazon Global Network Overview with James Hamilton  "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

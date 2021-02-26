@@ -1,0 +1,148 @@
+[
+{
+	"uri": "/",
+	"title": "Migrating the Monolith",
+	"tags": [],
+	"description": "",
+	"content": "Migrating the Monolith In this lab you learn how to deploy our fictitious web application TravelBuddy to run on AWS.\nYou will then learn how to use the AWS SDKs to query and manipulate the AWS environment from code, with two coding exercises.\nTopics Covered By the end of this lab, you will be able to:\n Use the AWS Console to deploy and verify AWS resources using an AWS CloudFormation template. Use AWS Tools for Eclipse to deploy a Java Application to an Elastic Beanstalk environment. Install and configure the AWS Elastic Beanstalk CLI tool. Use the AWS Elastic Beanstalk CLI to deploy an update to an existing Elastic Beanstalk environment. Use the AWS SDK to query and modify the AWS environment using code. Use the AWS SDK to create an S3 bucket, upload a file and delete the file and bucket.  Technical Knowledge Prerequisites To successfully complete this lab, you should be familiar the Eclipse application development environment, the Java programming language and the command line/terminal.\nEnvironment All the resources required to begin this lab have already been provisioned and set up for you. If running in your own account, use this CloudFormation template\nThe following diagram depicts the resources that were deployed in your AWS account.\nContents  Prerequisite Database Setup Test Locally Deploy application Update the Application Query the API Conclusion References  "
+},
+{
+	"uri": "/1-prerequisites/",
+	"title": "Prerequisites",
+	"tags": [],
+	"description": "",
+	"content": "Welcome to the first module in this workshop! This module involves getting access to a developer environment that we’ve provisioned for you. The developer environment contains all the software and network access required to get you up and running with the labs in record time.\nWe’ve chosen to do this as the main aim for this workshop is learning the content in each module, not setting up your local machines. It also provides a consistent environment between you and your fellow colleagues to eliminate the weird “works on my machine” behavior.\nIf you were planning on running this lab on your own machine, you’ll have to adapt the instructions accordingly. Make sure to manually install the software listed in the Development Environment section below.\nContents\n Topics Covered Development Environment  Topics Covered By the end of this lab, you will be able to:\nConnect to a running windows instance\nDevelopment Environment A fully fledged development environment has already been created for you with the following resources installed:\n Java 8 JDK Apache Maven Eclipse IDE for Java EE Developers Tomcat 9 AWS Toolkit for eclipse AWS CLI Elastic Beanstalk CLI  "
+},
+{
+	"uri": "/3-deploy-app/1-deploy-to-eb/",
+	"title": "Deploy to ElasticBeanstalk",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/5-query-api/1-using-eclipse/",
+	"title": "Query the API",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/4-update-app/1-travelbuddy/",
+	"title": "Updating Application",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/2-test-local/1-using-eclipse/",
+	"title": "Using Eclipse IDE",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/1-prerequisites/1-create-environment/1-vpc/",
+	"title": "VPC",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/2-test-local/",
+	"title": "Test locally",
+	"tags": [],
+	"description": "",
+	"content": "In a previous step, you downloaded the TravelBuddy bundle file which contains all the files to run the monolithic application, implemented as a Java project. In this task, you will open the project and update the database connectivity configuration, then launch the project in the local development environment to test that the project is building and connecting to the database correctly.\n"
+},
+{
+	"uri": "/1-prerequisites/1-create-environment/2-ec2/",
+	"title": "EC2",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/1-prerequisites/2-remote-env-config-cli/",
+	"title": "Remote enviroment &amp; Configure the AWS CLI",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/3-deploy-app/",
+	"title": "Deploy application",
+	"tags": [],
+	"description": "",
+	"content": "In a previous step, you downloaded the TravelBuddy bundle file which contains all the files to run the monolithic application, implemented as a Java project. In this task, you will open the project and update the database connectivity configuration, then launch the project in the local development environment to test that the project is building and connecting to the database correctly.\n"
+},
+{
+	"uri": "/1-prerequisites/1-create-environment/",
+	"title": "Create Environment",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/1-prerequisites/3-database-setup/",
+	"title": "Database setup",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/1-prerequisites/1-create-environment/3-rds/",
+	"title": "RDS",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/4-update-app/",
+	"title": "Update the application",
+	"tags": [],
+	"description": "",
+	"content": "In a previous step, you downloaded the TravelBuddy bundle file which contains all the files to run the monolithic application, implemented as a Java project. In this task, you will open the project and update the database connectivity configuration, then launch the project in the local development environment to test that the project is building and connecting to the database correctly.\n"
+},
+{
+	"uri": "/1-prerequisites/4-project-files/",
+	"title": "Project Files",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/5-query-api/",
+	"title": "Query the API",
+	"tags": [],
+	"description": "",
+	"content": "In this exercise, you will use the Java SDK to inspect your AWS environment, and query for EC2 instance information. This gives you some experience in how you can make use of the AWS SDKs to manipulate resources in your AWS account directly, to create your own tooling, or control resource creation and management programmatically.\n"
+},
+{
+	"uri": "/6-conclustion/",
+	"title": "Conclusion",
+	"tags": [],
+	"description": "",
+	"content": "Congratulations! You now have successfully:  Used the AWS Console to deploy and verify AWS resources using an AWS CloudFormation template. Used AWS Tools for Eclipse to deploy a Java Application to an Elastic Beanstalk environment. Installed and configure the AWS Elastic Beanstalk CLI tool. Used the AWS Elastic Beanstalk CLI to deploy an update to an existing Elastic Beanstalk environment. Experimented with the AWS SDKs to query and manipulate the AWS environment.  "
+},
+{
+	"uri": "/7-resources/",
+	"title": "Resources",
+	"tags": [],
+	"description": "",
+	"content": "Useful resources:  6 strategies for migrating applications to the cloud AWS re:Invent 2018: PaaS – From Code to Running Application using AWS Elastic Beanstalk (DEV323) Cloud migrations customers Lift and shift application workloads Amazon Global Network Overview with James Hamilton  "
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
