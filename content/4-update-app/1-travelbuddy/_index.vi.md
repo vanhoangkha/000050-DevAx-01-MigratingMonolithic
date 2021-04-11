@@ -22,14 +22,29 @@ Bây giờ chúng ta sẽ tạo một thay đổi đơn giản đổi với mã 
 cd \<into the directory that has the project's pom.xml file\>
 mvn package
 ```
+Lệnh mvn package chạy thành công và tạo ra file war kết quả như dưới đây
+```
+[INFO] Packaging webapp
+[INFO] Assembling webapp [travelbuddy] in [C:\Users\Administrator\Downloads\TravelBuddy\TravelBuddy\target\travelbuddy]
+[INFO] Processing war project
+[INFO] Copying webapp resources [C:\Users\Administrator\Downloads\TravelBuddy\TravelBuddy\src\main\webapp]
+[INFO] Webapp assembled in [351 msecs]
+[INFO] Building war: C:\Users\Administrator\Downloads\TravelBuddy\TravelBuddy\target\travelbuddy.war
+[INFO] WEB-INF\web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+```
+
 7. Chuyển sang thư mục chứa tập tin WAR và khởi tạo nội dung để triển khai Elastic Beanstalk bằng công cụ eb vừa cài đặt.
+
 ```bash
 cd target\\travelbuddy
 eb init --profile devaxacademy
 ```
-8. Với **Select a default region**, nhập số tương ứng với region đang chứa các tài nguyên cho bài thực hành này.
-9. Với **Select an application to use**, nhập số tương ứng với ứng dụng TravelBuddy và nhấn Enter. Bạn không cần lo lắng nếu xuất hiện thông báo *TravelBuddy and hit enter. If you receive a message Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization*.
-10. Chạy lệnh dưới đây để tải bản mới nhất của ứng dụng lên môi trường Beanstalk
+1. Với **Select a default region**, nhập số tương ứng với region đang chứa các tài nguyên cho bài thực hành này.
+2. Với **Select an application to use**, nhập số tương ứng với ứng dụng TravelBuddy và nhấn Enter. Bạn không cần lo lắng nếu xuất hiện thông báo **Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization**.
+3.  Chạy lệnh dưới đây để tải bản mới nhất của ứng dụng lên môi trường Beanstalk
 ```bash
 eb deploy --profile devaxacademy
 ```

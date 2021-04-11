@@ -63,6 +63,14 @@ Ngoài ra, nếu muốn, bạn có thể sử dụng Maven từ dòng lệnh đ�
 
 30. Tìm thẻ **Software** và chọn **Edit**
 31. Cuộn xuống bảng **Environment properties**, và điền các thông tin như hình
+    
+| Property Name | Property Value |
+| ------ | ----------- |
+| JDBC_CONNECTION_STRING   | jdbc:mysql://**[RDSEndpoint]**:3306/travelbuddy?useSSL=false |
+| JDBC_UID	  | root |
+| JDBC_PWD	  | labpassword |
+
+
 ![DeployApp](../../../../images/3/14.png?width=90pc)
 32. Chọn **Save**
 

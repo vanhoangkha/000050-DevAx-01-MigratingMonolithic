@@ -37,7 +37,7 @@ Bây giờ bạn sẽ cấu hình máy chủ **Tomcat v9.x** cục bộ để ch
 13.  Chọn **Finish**
 ![Eclipse](../../../../images/2/5.png?width=50pc)
 14.  Trong **Project Explorer**, mở **Servers > Tomcat v9.x Server at localhost-config**.\
-15.  Mở tập tin **context.xml** và dán đoạn mã nguồn sau vào trước dòng cuối(</Context>)\
+15.  Mở tập tin **context.xml** và dán đoạn mã nguồn sau vào trước dòng cuối **</ Context>**
 ```
 <!-- Environment variables -->
 <Parameter name="JDBC_CONNECTION_STRING"  value="jdbc:mysql://<RDSEndpoint>:3306/travelbuddy?useSSL=false"  override="false"/>

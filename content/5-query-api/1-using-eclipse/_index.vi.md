@@ -15,6 +15,7 @@ pre = "<b>5.1. </b>"
 6. Xem cách các thông tin xác thực được truy xuất bằng ProfileCredentialsProvide() bằng cách chỉ định *devaxacademy* profile.
 Sau đó, credentials object được sử dụng trong **AmazonEC2ClientBuilder**.
 Đừng quên chỉnh sửa Region cho đúng với region đang thực hiện bài thực hành.
+![QueryAPI](../../../../images/5/3.png?width=90pc)
 7. Khởi chạy ứng dụng bằng cách nhấp chuột phải vào ứng dụng và chọn **Run As -> JUnit Test**.
 ![QueryAPI](../../../../images/5/1.png?width=90pc)
 8. Bạn sẽ nhận được kết quả tương tự như hình dưới. Kết quả nhận được hiển thị số lượng EC2 instance trong tài khoản người dùng IAM.

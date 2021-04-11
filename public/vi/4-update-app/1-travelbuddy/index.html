@@ -12,21 +12,21 @@
     <title>Cập nhật ứng dụng TravelBuddy :: DevAx - Chuyển đổi Monoliths sang Microservices - Chuyển đổi Ứng dụng Monolith</title>
 
     
-    <link href="/css/nucleus.css?1618113629" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1618113629" rel="stylesheet">
-    <link href="/css/hybrid.css?1618113629" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1618113629" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1618113629" rel="stylesheet">
-    <link href="/css/auto-complete.css?1618113629" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1618113629" rel="stylesheet">
-    <link href="/css/theme.css?1618113629" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1618113629" rel="stylesheet">
+    <link href="/css/nucleus.css?1618123629" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1618123629" rel="stylesheet">
+    <link href="/css/hybrid.css?1618123629" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1618123629" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1618123629" rel="stylesheet">
+    <link href="/css/auto-complete.css?1618123629" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1618123629" rel="stylesheet">
+    <link href="/css/theme.css?1618123629" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1618123629" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1618113629" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1618123629" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1618113629"></script>
+    <script src="/js/jquery-3.3.1.min.js?1618123629"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1618113629"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1618113629"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1618123629"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1618123629"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1618113629"></script>
+<script type="text/javascript" src="/js/search.js?1618123629"></script>
 
     
   </div>
@@ -825,14 +825,25 @@
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd <span style="color:#ae81ff">\&lt;</span>into the directory that has the project<span style="color:#960050;background-color:#1e0010">&#39;</span>s pom.xml file<span style="color:#ae81ff">\&gt;</span>
 mvn package
-</code></pre></div><ol start="7">
+</code></pre></div><p>Lệnh mvn package chạy thành công và tạo ra file war kết quả như dưới đây</p>
+<pre><code>[INFO] Packaging webapp
+[INFO] Assembling webapp [travelbuddy] in [C:\Users\Administrator\Downloads\TravelBuddy\TravelBuddy\target\travelbuddy]
+[INFO] Processing war project
+[INFO] Copying webapp resources [C:\Users\Administrator\Downloads\TravelBuddy\TravelBuddy\src\main\webapp]
+[INFO] Webapp assembled in [351 msecs]
+[INFO] Building war: C:\Users\Administrator\Downloads\TravelBuddy\TravelBuddy\target\travelbuddy.war
+[INFO] WEB-INF\web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+</code></pre><ol start="7">
 <li>Chuyển sang thư mục chứa tập tin WAR và khởi tạo nội dung để triển khai Elastic Beanstalk bằng công cụ eb vừa cài đặt.</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd target<span style="color:#ae81ff">\\</span>travelbuddy
 eb init --profile devaxacademy
-</code></pre></div><ol start="8">
+</code></pre></div><ol>
 <li>Với <strong>Select a default region</strong>, nhập số tương ứng với region đang chứa các tài nguyên cho bài thực hành này.</li>
-<li>Với <strong>Select an application to use</strong>, nhập số tương ứng với ứng dụng TravelBuddy và nhấn Enter. Bạn không cần lo lắng nếu xuất hiện thông báo <em>TravelBuddy and hit enter. If you receive a message Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization</em>.</li>
+<li>Với <strong>Select an application to use</strong>, nhập số tương ứng với ứng dụng TravelBuddy và nhấn Enter. Bạn không cần lo lắng nếu xuất hiện thông báo <strong>Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization</strong>.</li>
 <li>Chạy lệnh dưới đây để tải bản mới nhất của ứng dụng lên môi trường Beanstalk</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">eb deploy --profile devaxacademy
@@ -1203,19 +1214,19 @@ eb init --profile devaxacademy
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1618113629"></script>
-    <script src="/js/perfect-scrollbar.min.js?1618113629"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1618113629"></script>
-    <script src="/js/jquery.sticky.js?1618113629"></script>
-    <script src="/js/featherlight.min.js?1618113629"></script>
-    <script src="/js/highlight.pack.js?1618113629"></script>
+    <script src="/js/clipboard.min.js?1618123629"></script>
+    <script src="/js/perfect-scrollbar.min.js?1618123629"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1618123629"></script>
+    <script src="/js/jquery.sticky.js?1618123629"></script>
+    <script src="/js/featherlight.min.js?1618123629"></script>
+    <script src="/js/highlight.pack.js?1618123629"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1618113629"></script>
-    <script src="/js/learn.js?1618113629"></script>
-    <script src="/js/hugo-learn.js?1618113629"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1618123629"></script>
+    <script src="/js/learn.js?1618123629"></script>
+    <script src="/js/hugo-learn.js?1618123629"></script>
 
-    <link href="/mermaid/mermaid.css?1618113629" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1618113629"></script>
+    <link href="/mermaid/mermaid.css?1618123629" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1618123629"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
