@@ -12,21 +12,21 @@
     <title>Sử dụng Eclipse IDE :: DevAx - Chuyển đổi Monoliths sang Microservices - Chuyển đổi Ứng dụng Monolith</title>
 
     
-    <link href="/css/nucleus.css?1614329401" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1614329401" rel="stylesheet">
-    <link href="/css/hybrid.css?1614329401" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1614329401" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1614329401" rel="stylesheet">
-    <link href="/css/auto-complete.css?1614329401" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1614329401" rel="stylesheet">
-    <link href="/css/theme.css?1614329401" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1614329401" rel="stylesheet">
+    <link href="/css/nucleus.css?1618113629" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1618113629" rel="stylesheet">
+    <link href="/css/hybrid.css?1618113629" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1618113629" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1618113629" rel="stylesheet">
+    <link href="/css/auto-complete.css?1618113629" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1618113629" rel="stylesheet">
+    <link href="/css/theme.css?1618113629" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1618113629" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1614329401" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1618113629" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1614329401"></script>
+    <script src="/js/jquery-3.3.1.min.js?1618113629"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1614329401"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1614329401"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1618113629"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1618113629"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1614329401"></script>
+<script type="text/javascript" src="/js/search.js?1618113629"></script>
 
     
   </div>
@@ -844,20 +844,26 @@
 13.  Chọn <strong>Finish</strong>
 <img src="../../../../images/2/5.png?width=50pc" alt="Eclipse">
 14.  Trong <strong>Project Explorer</strong>, mở <strong>Servers &gt; Tomcat v9.x Server at localhost-config</strong>.<br>
-15.  Mở tập tin <strong>context.xml</strong> và dán đoạn mã nguồn sau vào trước dòng cuối(<!-- raw HTML omitted -->)<br>
-16.  Thay <!-- raw HTML omitted --> bằng giá trị của <strong>RDS Endpoint</strong> và lưu file lại
-<img src="../../../../images/2/6.png?width=90pc" alt="Eclipse">
-17.  Click chuột phải vào thư mục project và chọn <strong>Run As&hellip;</strong>, chọn <strong>Run on Server</strong>. 
+15.  Mở tập tin <strong>context.xml</strong> và dán đoạn mã nguồn sau vào trước dòng cuối(<!-- raw HTML omitted -->)\</p>
+<pre><code>&lt;!-- Environment variables --&gt;
+&lt;Parameter name=&quot;JDBC_CONNECTION_STRING&quot;  value=&quot;jdbc:mysql://&lt;RDSEndpoint&gt;:3306/travelbuddy?useSSL=false&quot;  override=&quot;false&quot;/&gt;
+&lt;Parameter name=&quot;JDBC_UID&quot;  value=&quot;root&quot;  override=&quot;false&quot;/&gt;
+&lt;Parameter name=&quot;JDBC_PWD&quot;  value=&quot;labpassword&quot;  override=&quot;false&quot;/&gt;
+</code></pre><ol start="16">
+<li>Thay <!-- raw HTML omitted --> bằng giá trị của <strong>RDS Endpoint</strong> và lưu file lại
+<img src="../../../../images/2/6.png?width=90pc" alt="Eclipse"></li>
+<li>Click chuột phải vào thư mục project và chọn <strong>Run As&hellip;</strong>, chọn <strong>Run on Server</strong>. 
 <img src="../../../../images/2/7.png?width=90pc" alt="Eclipse">
-Nếu không thấy <strong>Run on Server</strong>, click chuột phải vào thư mục project, chọn <strong>Maven</strong> và chọn <strong>Update Project&hellip;</strong> và chọn <strong>OK</strong>.<br>
-18.   Chọn <strong>Tomcat v9.0 server</strong> và chọn <strong>Finish</strong>.<br>
-19.   Ứng dụng sẽ khởi động trong Java Spring giống như một ứng dụng Spring bình thường. Bạn sẽ thấy các thông báo xuất hiện trong cửa sổ bảng điều khiển, bao gồm việc khám phá các Request Handler Mappings cho các đường dẫn khác nhau được ứng dụng hiển thị.<br>
+Nếu không thấy <strong>Run on Server</strong>, click chuột phải vào thư mục project, chọn <strong>Maven</strong> và chọn <strong>Update Project&hellip;</strong> và chọn <strong>OK</strong>.\</li>
+<li>Chọn <strong>Tomcat v9.0 server</strong> và chọn <strong>Finish</strong>.\</li>
+<li>Ứng dụng sẽ khởi động trong Java Spring giống như một ứng dụng Spring bình thường. Bạn sẽ thấy các thông báo xuất hiện trong cửa sổ bảng điều khiển, bao gồm việc khám phá các Request Handler Mappings cho các đường dẫn khác nhau được ứng dụng hiển thị.<br>
 Trong giây lát, trình duyệt tích hợp IDE sẽ xuất hiện và bạn sẽ thấy ứng dụng TravelBuddy được mở. Ứng dụng sẽ hiển thị dữ liệu được truy xuất từ RDS instance đang chạy trong AWS.
 
 <div class="notices tip" ><p>Bạn có thể truy cập tới ứng dụng web TravelBuddy bằng trình duyệt với địa chỉ http://localhost:8080/travelbuddy/</p>
 </div>
 
-<strong>Lưu ý những điều dưới đây:</strong></p>
+<strong>Lưu ý những điều dưới đây:</strong></li>
+</ol>
 <ul>
 <li>Ứng dụng đang chạy trên máy chủ tomcat cục bộ của bạn</li>
 <li>Ứng dụng sử dụng cơ sở dữ liệu Amazon RDS MySQL.</li>
@@ -1227,19 +1233,19 @@ Trong giây lát, trình duyệt tích hợp IDE sẽ xuất hiện và bạn s�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1614329401"></script>
-    <script src="/js/perfect-scrollbar.min.js?1614329401"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1614329401"></script>
-    <script src="/js/jquery.sticky.js?1614329401"></script>
-    <script src="/js/featherlight.min.js?1614329401"></script>
-    <script src="/js/highlight.pack.js?1614329401"></script>
+    <script src="/js/clipboard.min.js?1618113629"></script>
+    <script src="/js/perfect-scrollbar.min.js?1618113629"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1618113629"></script>
+    <script src="/js/jquery.sticky.js?1618113629"></script>
+    <script src="/js/featherlight.min.js?1618113629"></script>
+    <script src="/js/highlight.pack.js?1618113629"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1614329401"></script>
-    <script src="/js/learn.js?1614329401"></script>
-    <script src="/js/hugo-learn.js?1614329401"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1618113629"></script>
+    <script src="/js/learn.js?1618113629"></script>
+    <script src="/js/hugo-learn.js?1618113629"></script>
 
-    <link href="/mermaid/mermaid.css?1614329401" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1614329401"></script>
+    <link href="/mermaid/mermaid.css?1618113629" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1618113629"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

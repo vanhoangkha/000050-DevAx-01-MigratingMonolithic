@@ -38,13 +38,19 @@ Bây giờ bạn sẽ cấu hình máy chủ **Tomcat v9.x** cục bộ để ch
 ![Eclipse](../../../../images/2/5.png?width=50pc)
 14.  Trong **Project Explorer**, mở **Servers > Tomcat v9.x Server at localhost-config**.\
 15.  Mở tập tin **context.xml** và dán đoạn mã nguồn sau vào trước dòng cuối(</Context>)\
+```
+<!-- Environment variables -->
+<Parameter name="JDBC_CONNECTION_STRING"  value="jdbc:mysql://<RDSEndpoint>:3306/travelbuddy?useSSL=false"  override="false"/>
+<Parameter name="JDBC_UID"  value="root"  override="false"/>
+<Parameter name="JDBC_PWD"  value="labpassword"  override="false"/>
+```
 16.  Thay <RDSEndpoint> bằng giá trị của **RDS Endpoint** và lưu file lại
 ![Eclipse](../../../../images/2/6.png?width=90pc)
-17.  Click chuột phải vào thư mục project và chọn **Run As...**, chọn **Run on Server**. 
+1.   Click chuột phải vào thư mục project và chọn **Run As...**, chọn **Run on Server**. 
 ![Eclipse](../../../../images/2/7.png?width=90pc)
 Nếu không thấy **Run on Server**, click chuột phải vào thư mục project, chọn **Maven** và chọn **Update Project...** và chọn **OK**.\
-18.   Chọn **Tomcat v9.0 server** và chọn **Finish**.\
-19.   Ứng dụng sẽ khởi động trong Java Spring giống như một ứng dụng Spring bình thường. Bạn sẽ thấy các thông báo xuất hiện trong cửa sổ bảng điều khiển, bao gồm việc khám phá các Request Handler Mappings cho các đường dẫn khác nhau được ứng dụng hiển thị. \
+1.    Chọn **Tomcat v9.0 server** và chọn **Finish**.\
+2.    Ứng dụng sẽ khởi động trong Java Spring giống như một ứng dụng Spring bình thường. Bạn sẽ thấy các thông báo xuất hiện trong cửa sổ bảng điều khiển, bao gồm việc khám phá các Request Handler Mappings cho các đường dẫn khác nhau được ứng dụng hiển thị. \
 Trong giây lát, trình duyệt tích hợp IDE sẽ xuất hiện và bạn sẽ thấy ứng dụng TravelBuddy được mở. Ứng dụng sẽ hiển thị dữ liệu được truy xuất từ RDS instance đang chạy trong AWS.
 {{%notice tip%}}
 Bạn có thể truy cập tới ứng dụng web TravelBuddy bằng trình duyệt với địa chỉ http://localhost:8080/travelbuddy/
