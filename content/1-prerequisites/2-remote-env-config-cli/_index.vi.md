@@ -20,15 +20,33 @@ pre = "<b>1.2. </b>"
 Như vậy, ta đã kết nối được vào máy ảo Windows được tạo.
 
 #### Cấu hình AWS CLI
-8. Mở và nhập đoạn sau vào trình soạn thảo
+
+8. Gán quyền Administrator Access vào user awsstudent được tạo bởi Cloud Formation Template.Sau đó tạo Accesskey và Secret để có thể cấu hình
+AWS CLI.
+  + Vào console của dịch vụ IAM, click vào user **awsstudent**
+  ![Accesskey](../../../images/a/1.png?width=90pc)
+  + Click vào nút **Add Permission** 
+  ![Accesskey](../../../images/a/2.png?width=90pc)
+  + Click **Attach existing policies directly** , Click chọn **Administrator Access**, Click **Next:Review**.
+  ![Accesskey](../../../images/a/3.png?width=90pc)
+  + Click **Add Permission**
+  ![Accesskey](../../../images/a/4.png?width=90pc)
+  + Click vào tab **Security Credentials**
+  ![Accesskey](../../../images/a/5.png?width=90pc)
+  + Click vào **Create access key** để tiến hành tạo access key.
+  ![Accesskey](../../../images/a/6.png?width=90pc)
+  + Lưu thông tin Access key và Secret access key để phục vụ cho bước tiếp theo.
+  ![Accesskey](../../../images/a/7.png?width=90pc)
+9. Mở và nhập đoạn sau vào trình soạn thảo
 ```bash
 aws configure set profile.devaxacademy.region <your_region>
 aws configure set profile.devaxacademy.aws_access_key_id <access_key_id>
 aws configure set profile.devaxacademy.aws_secret_access_key <secret_access_key>
 ```
-9.  Nếu bạn đã có một bộ thông tin xác thực cho người dùng IAM có đặc quyền quản trị, bạn có thể sử dụng lại chúng cho các thông tin bên dưới trong bước tiếp theo. Nếu bạn chưa có thông tin xác thực truy cập, làm theo hướng dẫn [tại đây](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) để truy xuất chúng cho người dùng có đặc quyền quản trị để sử dụng trong bài thực hành này.
-10. Điền các giá trị của người dùng IAM vào câu lệnh aws configure:
+
+10.  Nếu bạn đã có một bộ thông tin xác thực cho người dùng IAM có đặc quyền quản trị, bạn có thể sử dụng lại chúng cho các thông tin bên dưới trong bước tiếp theo. Nếu bạn chưa có thông tin xác thực truy cập, làm theo hướng dẫn [tại đây](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) để truy xuất chúng cho người dùng có đặc quyền quản trị để sử dụng trong bài thực hành này.
+11. Điền các giá trị của người dùng IAM vào câu lệnh aws configure:
     - <your_region> với Region code
     - <access_key_id> với giá trị Access Key Id
     - <secret_access_key> với giá trị Secret Access Key
-11. Sao chép và dán đoạn code vào comand line và thực thi chúng
+12. Sao chép và dán đoạn code vào comand line và thực thi chúng
