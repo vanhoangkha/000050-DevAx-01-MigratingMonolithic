@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Truy vấn API dùng Eclipse IDE on AWS KMS Workshop</title>
+    <link>/vi/6-queryapi/</link>
+    <description>Recent content in Truy vấn API dùng Eclipse IDE on AWS KMS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 01 Jan 1970 07:33:40 +0700</lastBuildDate><atom:link href="/vi/6-queryapi/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

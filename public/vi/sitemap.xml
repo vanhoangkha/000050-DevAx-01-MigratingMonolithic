@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/vi/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
@@ -15,268 +14,161 @@
                 hreflang="vi"
                 href="/vi/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
+  </url><url>
+    <loc>/vi/2-prepare/2.1-createkeypair/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-prerequisites/"
+                href="/2-prepare/2.1-createkeypair/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-prerequisites/"
+                href="/vi/2-prepare/2.1-createkeypair/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/1-create-environment/</loc>
+  </url><url>
+    <loc>/vi/1-introduction/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-prerequisites/1-create-environment/"
+                href="/1-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-prerequisites/1-create-environment/"
+                href="/vi/1-introduction/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/4-update-app/1-travelbuddy/</loc>
+  </url><url>
+    <loc>/vi/2-prepare/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-update-app/1-travelbuddy/"
+                href="/2-prepare/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-update-app/1-travelbuddy/"
+                href="/vi/2-prepare/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/2-test-local/1-using-eclipse/</loc>
+  </url><url>
+    <loc>/vi/2-prepare/2.2-createstack/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-test-local/1-using-eclipse/"
+                href="/2-prepare/2.2-createstack/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-test-local/1-using-eclipse/"
+                href="/vi/2-prepare/2.2-createstack/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/5-query-api/1-using-eclipse/</loc>
+  </url><url>
+    <loc>/vi/2-prepare/2.3-connectvirtualmachine/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/5-query-api/1-using-eclipse/"
+                href="/2-prepare/2.3-connectvirtualmachine/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/5-query-api/1-using-eclipse/"
+                href="/vi/2-prepare/2.3-connectvirtualmachine/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/3-deploy-app/1-deploy-to-eb/</loc>
+  </url><url>
+    <loc>/vi/3-testlocally/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-deploy-app/1-deploy-to-eb/"
+                href="/3-testlocally/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-deploy-app/1-deploy-to-eb/"
+                href="/vi/3-testlocally/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/1-create-environment/1-vpc/</loc>
+  </url><url>
+    <loc>/vi/2-prepare/2.4-setupdatabase/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-prerequisites/1-create-environment/1-vpc/"
+                href="/2-prepare/2.4-setupdatabase/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-prerequisites/1-create-environment/1-vpc/"
+                href="/vi/2-prepare/2.4-setupdatabase/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/2-test-local/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
+  </url><url>
+    <loc>/vi/4-deploytoelasticbeanstalk/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-test-local/"
+                href="/4-deploytoelasticbeanstalk/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-test-local/"
+                href="/vi/4-deploytoelasticbeanstalk/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/1-create-environment/2-ec2/</loc>
+  </url><url>
+    <loc>/vi/5-updateapp/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-prerequisites/1-create-environment/2-ec2/"
+                href="/5-updateapp/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-prerequisites/1-create-environment/2-ec2/"
+                href="/vi/5-updateapp/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/2-remote-env-config-cli/</loc>
+  </url><url>
+    <loc>/vi/2-prepare/2.5-downloadproject/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-prerequisites/2-remote-env-config-cli/"
+                href="/2-prepare/2.5-downloadproject/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-prerequisites/2-remote-env-config-cli/"
+                href="/vi/2-prepare/2.5-downloadproject/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/3-deploy-app/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
+  </url><url>
+    <loc>/vi/6-queryapi/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-deploy-app/"
+                href="/6-queryapi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-deploy-app/"
+                href="/vi/6-queryapi/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/3-database-setup/</loc>
+  </url><url>
+    <loc>/vi/7-cleanup/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-prerequisites/3-database-setup/"
+                href="/7-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-prerequisites/3-database-setup/"
+                href="/vi/7-cleanup/"
                 />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/1-create-environment/3-rds/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/1-prerequisites/1-create-environment/3-rds/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/1-prerequisites/1-create-environment/3-rds/"
-                />
-  </url>
-  
-  <url>
-    <loc>/vi/4-update-app/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/4-update-app/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/4-update-app/"
-                />
-  </url>
-  
-  <url>
-    <loc>/vi/1-prerequisites/4-project-files/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/1-prerequisites/4-project-files/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/1-prerequisites/4-project-files/"
-                />
-  </url>
-  
-  <url>
-    <loc>/vi/5-query-api/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/5-query-api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/5-query-api/"
-                />
-  </url>
-  
-  <url>
-    <loc>/vi/6-conclustion/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/6-conclustion/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/6-conclustion/"
-                />
-  </url>
-  
-  <url>
-    <loc>/vi/7-resources/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/7-resources/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/7-resources/"
-                />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -288,9 +180,7 @@
                 hreflang="vi"
                 href="/vi/categories/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -303,5 +193,4 @@
                 href="/vi/tags/"
                 />
   </url>
-  
 </urlset>

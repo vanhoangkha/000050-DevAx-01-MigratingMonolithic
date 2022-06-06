@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.97.3" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tags :: DevAx - Monoliths to Microservices - Migrating the Monolith</title>
+    <title>Tags :: AWS KMS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1624844701" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1624844701" rel="stylesheet">
-    <link href="/css/hybrid.css?1624844701" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1624844701" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1624844701" rel="stylesheet">
-    <link href="/css/auto-complete.css?1624844701" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1624844701" rel="stylesheet">
-    <link href="/css/theme.css?1624844701" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1624844701" rel="stylesheet">
+    <link href="/css/nucleus.css?1654538137" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1654538137" rel="stylesheet">
+    <link href="/css/hybrid.css?1654538137" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1654538137" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1654538137" rel="stylesheet">
+    <link href="/css/auto-complete.css?1654538137" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1654538137" rel="stylesheet">
+    <link href="/css/theme.css?1654538137" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1654538137" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1624844701" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1654538137" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1624844701"></script>
+    <script src="/js/jquery-3.3.1.min.js?1654538137"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1624844701"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1624844701"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1654538137"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1654538137"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1624844701"></script>
+<script type="text/javascript" src="/js/search.js?1654538137"></script>
 
     
   </div>
@@ -82,13 +82,39 @@
  
   
     
-    <li data-nav-id="/1-prerequisites/" title="Prerequisites" class="dd-item 
+    <li data-nav-id="/1-introduction/" title="Introduction" class="dd-item 
         
         
         
         ">
-      <a href="/1-prerequisites/">
-          <b>1. </b>Prerequisites
+      <a href="/1-introduction/">
+          <b>1. </b>Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/2-prepare/" title="Preparation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/2-prepare/">
+          <b>2. </b>Preparation
           
             <i class="fas fa-check read-icon"></i>
           
@@ -113,13 +139,13 @@
  
   
     
-    <li data-nav-id="/1-prerequisites/2-remote-env-config-cli/" title="Remote enviroment &amp; Configure the AWS CLI" class="dd-item 
+    <li data-nav-id="/2-prepare/2.1-createkeypair/" title="Create Key Pair" class="dd-item 
         
         
         
         ">
-      <a href="/1-prerequisites/2-remote-env-config-cli/">
-          <b>1.2. </b>Remote enviroment &amp; Configure the AWS CLI
+      <a href="/2-prepare/2.1-createkeypair/">
+          <b>2.1. </b>Create Key Pair
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,44 +167,13 @@
  
   
     
-    <li data-nav-id="/1-prerequisites/1-create-environment/" title="Create Environment" class="dd-item 
+    <li data-nav-id="/2-prepare/2.2-createstack/" title="Create a CloudFormation stack" class="dd-item 
         
         
         
         ">
-      <a href="/1-prerequisites/1-create-environment/">
-          <b>1.1. </b>Create Environment
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/1-prerequisites/1-create-environment/1-vpc/" title="VPC" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/1-prerequisites/1-create-environment/1-vpc/">
-          <b>1.1.1. </b>VPC
+      <a href="/2-prepare/2.2-createstack/">
+          <b>2.2. </b>Create a CloudFormation stack
           
             <i class="fas fa-check read-icon"></i>
           
@@ -200,13 +195,13 @@
  
   
     
-    <li data-nav-id="/1-prerequisites/1-create-environment/2-ec2/" title="EC2" class="dd-item 
+    <li data-nav-id="/2-prepare/2.3-connectvirtualmachine/" title="Connect to the Windows Instance" class="dd-item 
         
         
         
         ">
-      <a href="/1-prerequisites/1-create-environment/2-ec2/">
-          <b>1.1.2. </b>EC2
+      <a href="/2-prepare/2.3-connectvirtualmachine/">
+          <b>2.3. </b>Connect to the Windows Instance
           
             <i class="fas fa-check read-icon"></i>
           
@@ -228,50 +223,13 @@
  
   
     
-    <li data-nav-id="/1-prerequisites/1-create-environment/3-rds/" title="RDS" class="dd-item 
+    <li data-nav-id="/2-prepare/2.4-setupdatabase/" title="Setup the Database" class="dd-item 
         
         
         
         ">
-      <a href="/1-prerequisites/1-create-environment/3-rds/">
-          <b>1.1.3. </b>RDS
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/1-prerequisites/3-database-setup/" title="Database setup" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/1-prerequisites/3-database-setup/">
-          <b>1.3. </b>Database setup
+      <a href="/2-prepare/2.4-setupdatabase/">
+          <b>2.4. </b>Setup the Database
           
             <i class="fas fa-check read-icon"></i>
           
@@ -293,13 +251,13 @@
  
   
     
-    <li data-nav-id="/1-prerequisites/4-project-files/" title="Project Files" class="dd-item 
+    <li data-nav-id="/2-prepare/2.5-downloadproject/" title="Download Project" class="dd-item 
         
         
         
         ">
-      <a href="/1-prerequisites/4-project-files/">
-          <b>1.4. </b>Project Files
+      <a href="/2-prepare/2.5-downloadproject/">
+          <b>2.5. </b>Download Project
           
             <i class="fas fa-check read-icon"></i>
           
@@ -328,277 +286,13 @@
  
   
     
-    <li data-nav-id="/2-test-local/" title="Test locally" class="dd-item 
+    <li data-nav-id="/3-testlocally/" title="Test locally by Eclipse IDE" class="dd-item 
         
         
         
         ">
-      <a href="/2-test-local/">
-          <b>2. </b>Test locally
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/2-test-local/1-using-eclipse/" title="Using Eclipse IDE" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/2-test-local/1-using-eclipse/">
-          <b>2.1. </b>Using Eclipse IDE
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/3-deploy-app/" title="Deploy application" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/3-deploy-app/">
-          <b>3. </b>Deploy application
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/3-deploy-app/1-deploy-to-eb/" title="Deploy to ElasticBeanstalk" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/3-deploy-app/1-deploy-to-eb/">
-          <b>3.1. </b>Deploy to ElasticBeanstalk
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/4-update-app/" title="Update the application" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/4-update-app/">
-          <b>4. </b>Update the application
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/4-update-app/1-travelbuddy/" title="Updating Application" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/4-update-app/1-travelbuddy/">
-          <b>4.1. </b>Updating Application
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-query-api/" title="Query the API" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-query-api/">
-          <b>5. </b>Query the API
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/5-query-api/1-using-eclipse/" title="Query the API" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/5-query-api/1-using-eclipse/">
-          <b>5.1. </b>Query the API
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/6-conclustion/" title="Conclusion" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/6-conclustion/">
-          <b>6. </b>Conclusion
+      <a href="/3-testlocally/">
+          <b>3. </b>Test locally by Eclipse IDE
           
             <i class="fas fa-check read-icon"></i>
           
@@ -618,13 +312,91 @@
  
   
     
-    <li data-nav-id="/7-resources/" title="Resources" class="dd-item 
+    <li data-nav-id="/4-deploytoelasticbeanstalk/" title="Deploy Application to ElasticBeanstalk " class="dd-item 
         
         
         
         ">
-      <a href="/7-resources/">
-          <b>7. </b>Resources
+      <a href="/4-deploytoelasticbeanstalk/">
+          <b>4. </b>Deploy Application to ElasticBeanstalk 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/5-updateapp/" title="Update the application " class="dd-item 
+        
+        
+        
+        ">
+      <a href="/5-updateapp/">
+          <b>5. </b>Update the application 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/6-queryapi/" title="Query the API use Eclipse IDE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/6-queryapi/">
+          <b>6. </b>Query the API use Eclipse IDE
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/7-cleanup/" title="Clean up resources" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/7-cleanup/">
+          <b>7. </b>Clean up resources
           
             <i class="fas fa-check read-icon"></i>
           
@@ -646,11 +418,7 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
-              </li>
-          
-              <li> 
-                  <a class="padding" href="https://www.facebook.com/groups/660548818043427/"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
+                  <a class="padding" href="https://www.facebook.com/groups/660548818043427/"><i class='fab fa-facebook'></i> AWS Study Group</a>
               </li>
           
         </ul>
@@ -717,12 +485,27 @@
     <section id="footer">
       <left>
     
-     <b> Home</b> <br>
+     <b> Workshop</b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7831153&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
 </left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>07-06-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng</a>
+        </i>
+        </left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -760,7 +543,7 @@
             
           
           
-            <a href='/'>Migrating the Monolith</a> > Tags
+            <a href='/'>Migrating the Monolith </a> > Tags
           
         
           
@@ -786,6 +569,8 @@
         <div id="body-inner">
           
             <h1>
+              
+                taxonomy ::
               
               Tags
             </h1>
@@ -845,21 +630,6 @@
 
                     
                     
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                     
 
                     
@@ -929,9 +699,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -977,10 +744,11 @@
 
                     
                     
-                        
-                    
                     
 
+                    
+            
+        
                     
                         
             
@@ -998,24 +766,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
                         
             
             
@@ -1028,77 +778,6 @@
                     
                     
 
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1145,7 +824,7 @@
 	 
 		
 		
-			<a class="nav nav-next" href="/1-prerequisites/" title="Prerequisites" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/1-introduction/" title="Introduction" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1155,19 +834,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1624844701"></script>
-    <script src="/js/perfect-scrollbar.min.js?1624844701"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1624844701"></script>
-    <script src="/js/jquery.sticky.js?1624844701"></script>
-    <script src="/js/featherlight.min.js?1624844701"></script>
-    <script src="/js/highlight.pack.js?1624844701"></script>
+    <script src="/js/clipboard.min.js?1654538137"></script>
+    <script src="/js/perfect-scrollbar.min.js?1654538137"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1654538137"></script>
+    <script src="/js/jquery.sticky.js?1654538137"></script>
+    <script src="/js/featherlight.min.js?1654538137"></script>
+    <script src="/js/highlight.pack.js?1654538137"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1624844701"></script>
-    <script src="/js/learn.js?1624844701"></script>
-    <script src="/js/hugo-learn.js?1624844701"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1654538137"></script>
+    <script src="/js/learn.js?1654538137"></script>
+    <script src="/js/hugo-learn.js?1654538137"></script>
 
-    <link href="/mermaid/mermaid.css?1624844701" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1624844701"></script>
+    <link href="/mermaid/mermaid.css?1654538137" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1654538137"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
