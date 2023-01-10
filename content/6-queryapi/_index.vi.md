@@ -15,16 +15,22 @@ Chúng ta sẽ sử dụng Java SDK để kiểm tra môi trường AWS của m�
 2. Trong Eclipse IDE
 * Click **File** 
 * Click **Import**
+
 ![Update the application](/images/6-queryapi/queryapi-001.png?featherlight=false&width=90pc)
+
 3. Trong phần **Import**
 * Click **Maven**
 * Click **Existing Maven Projects**
 * Click **Next**
+
 ![Update the application](/images/6-queryapi/queryapi-002.png?featherlight=false&width=90pc)
+
 4. Trong phần **Import Maven Projects**, Chọn **Browse** 
 * Trỏ tới thư mục **EC2Report** đã giải nén
 * Click **Finish**
+
 ![Update the application](/images/6-queryapi/queryapi-003.png?featherlight=false&width=90pc)
+
 5. Trong Eclipse IDE, mở tập tin **EC2Report/src/main/java/idevelop/samples/EC2Manager.java**
 * Tìm **ReportEC2Environment()** method
 * Chỉnh sửa Region cho đúng với region đang thực hiện bài thực hành.
@@ -32,12 +38,18 @@ Chúng ta sẽ sử dụng Java SDK để kiểm tra môi trường AWS của m�
 {{% notice tip %}} 
 Xem cách các thông tin xác thực được truy xuất bằng ProfileCredentialsProvide() bằng cách chỉ định devaxacademy profile. Sau đó, credentials object được sử dụng trong AmazonEC2ClientBuilder
 {{% /notice %}}
+
 ![Update the application](/images/6-queryapi/queryapi-004.png?featherlight=false&width=90pc)
+
 6. Khởi chạy ứng dụng bằng cách nhấp chuột phải vào ứng dụng  và Click **Run As**
 * Click **JUnit Test**
+
 ![Update the application](/images/6-queryapi/queryapi-005.png?featherlight=false&width=90pc)
+
 7. Bạn sẽ nhận được kết quả tương tự như hình dưới. Kết quả nhận được hiển thị số lượng EC2 instance trong tài khoản người dùng IAM. 
+
 ![Update the application](/images/6-queryapi/queryapi-006.png?featherlight=false&width=90pc)
+
 
 #### Bài tập tùy chọn
 1. Khám phá tập tin **pom.xml** và đảm bảo rằng bạn hiểu cách mà quản lý phụ thuộc hoạt động

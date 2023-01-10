@@ -8,19 +8,27 @@ pre = "<b>3. </b>"
 #### Kiểm tra ở máy chủ cục bộ bằng Eclipse IDE
 Trong phần này, chúng ta sẽ mở project, cập nhật cấu hình kết nối cơ sở dữ liệu, sau đó khởi chạy project trong môi trường phát triển cục bộ để kiểm tra xem project đang xây dựng và kết nối với cơ sở dữ liệu một cách chính xác.
 1. Mở **IDE Eclipse**
+
 ![Test Locally](/images/3-testlocally/testlocally-001.png?featherlight=false&width=90pc)
+
 2. Trong phần **Menu**, Click **File**
 * Click **Import...**
+
 ![Test Locally](/images/3-testlocally/testlocally-002.png?featherlight=false&width=90pc)
+
 3. Trong phần **Import**, Click **Maven**
 * Click **Existing Maven Projects**
 * Click **Next**
+
 ![Test Locally](/images/3-testlocally/testlocally-003.png?featherlight=false&width=90pc)
+
 4. Trong phần **Import Maven Projects**
 * Click **Browse**
 * Chọn thư mục **TravelBuddy** 
 * Click **Finish**
+
 ![Test Locally](/images/3-testlocally/testlocally-004.png?featherlight=false&width=90pc)
+
 {{% notice note %}} 
 Bạn sẽ cần phải đợi Maven tải xuống tất cả các tài nguyên cần thiết. Tỷ lệ phần trăm tải xuống hoàn tất sẽ được hiển thị ở góc dưới cùng bên phải.
 {{% /notice %}}
@@ -37,7 +45,9 @@ Bạn sẽ cần phải đợi Maven tải xuống tất cả các tài nguyên 
 		<beans:property name="jdbcInterceptors" value="com.amazonaws.xray.sql.mysql.TracingInterceptor" />
 </beans:bean>
 ```
+
 ![Test Locally](/images/3-testlocally/testlocally-005.png?featherlight=false&width=90pc)
+
 {{% notice note %}} 
 Không chỉnh sửa đoạn mã nguồn trên, nhưng lưu ý rằng mã này sử dụng các biến môi trường để định cấu hình máy chủ và tên người dùng / mật khẩu cho cơ sở dữ liệu MySQL. Khi bạn thực thi mã này trên máy chủ, các biến môi trường này cho phép bạn, tại thời điểm thực thi, truy cập đúng máy chủ.
 {{% /notice %}}
@@ -53,18 +63,26 @@ Trong bài thực hành này, bạn sẽ đặt các biến này để cho phép
 {{% notice note %}} 
 Bạn có thể cần chọn **Other…** để chọn chế độ xem **Servers** nếu nó không được cung cấp trong danh sách ngay từ đầu.
 {{% /notice %}}
+
 ![Test Locally](/images/3-testlocally/testlocally-006.png?featherlight=false&width=90pc)
+
 7. Trong phần **Servers**
 * Click **No servers are available. Click this link to create a new server…**
+
 ![Test Locally](/images/3-testlocally/testlocally-007.png?featherlight=false&width=90pc)
+
 8. Trong phần **Define a New Server**
 * Click **Apache**
 * Click **Tomcat v9.x Server**
 * Click **Next**
+
 ![Test Locally](/images/3-testlocally/testlocally-008.png?featherlight=false&width=90pc)
+
 9. Trong workspace, máy chủ Tomcat được đặt trong thư mục ẩn, vì vậy hãy sao chép và dán đường dẫn sau vào thanh địa chỉ ```C:\ProgramData\Tomcat9```
 * Click **Finish**
+
 ![Test Locally](/images/3-testlocally/testlocally-009.png?featherlight=false&width=90pc)
+
 10. Mở file có đường dẫn **Servers > Tomcat v9.x Server at localhost-config/context.xml**
 * Dán đoạn mã nguồn sau vào trước dòng **</ Context>**
 ```
@@ -77,17 +95,24 @@ Bạn có thể cần chọn **Other…** để chọn chế độ xem **Servers
 Thay **< RDSEndpoint>** bằng giá trị của **RDS endpoint**
 {{% /notice %}}
 * Lưu file lại
+
 ![Test Locally](/images/3-testlocally/testlocally-010.png?featherlight=false&width=90pc)
+
 11. Click chuột phải vào thư mục project
 *  Click **Run As**
 *  Click **Run on Server**
+
 ![Test Locally](/images/3-testlocally/testlocally-011.png?featherlight=false&width=90pc)
+
 {{% notice note %}} 
 Nếu không thấy **Run on Server**, click chuột phải vào thư mục project, chọn **Maven** và chọn **Update Project…** và chọn **OK**.
 {{% /notice %}}
 12. Trong phần **Run On Server**
 * Chọn **Tomcat v9.0 server at localhost**
 * Click **Finish**
+
 ![Test Locally](/images/3-testlocally/testlocally-012.png?featherlight=false&width=90pc)
+
 13. Trong giây lát, trình duyệt tích hợp IDE sẽ xuất hiện và bạn sẽ thấy ứng dụng TravelBuddy được mở. Ứng dụng sẽ hiển thị dữ liệu được truy xuất từ RDS instance đang chạy trong AWS. 
+
 ![Test Locally](/images/3-testlocally/testlocally-013.png?featherlight=false&width=90pc)

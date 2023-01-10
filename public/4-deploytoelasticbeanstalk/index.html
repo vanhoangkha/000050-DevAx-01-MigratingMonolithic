@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.97.3" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Deploy Application to ElasticBeanstalk  :: AWS KMS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1654538137" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1654538137" rel="stylesheet">
-    <link href="/css/hybrid.css?1654538137" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1654538137" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1654538137" rel="stylesheet">
-    <link href="/css/auto-complete.css?1654538137" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1654538137" rel="stylesheet">
-    <link href="/css/theme.css?1654538137" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1654538137" rel="stylesheet">
+    <link href="/css/nucleus.css?1673319957" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1673319957" rel="stylesheet">
+    <link href="/css/hybrid.css?1673319957" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1673319957" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1673319957" rel="stylesheet">
+    <link href="/css/auto-complete.css?1673319957" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1673319957" rel="stylesheet">
+    <link href="/css/theme.css?1673319957" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1673319957" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1654538137" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1673319957" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1654538137"></script>
+    <script src="/js/jquery-3.3.1.min.js?1673319957"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1654538137"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1654538137"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1673319957"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1673319957"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1654538137"></script>
+<script type="text/javascript" src="/js/search.js?1673319957"></script>
 
     
   </div>
@@ -313,7 +313,7 @@
   
     
     <li data-nav-id="/4-deploytoelasticbeanstalk/" title="Deploy Application to ElasticBeanstalk " class="dd-item 
-        parent
+        
         active
         
         ">
@@ -495,7 +495,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>07-06-2022</font></i>
+        <i><font color=orange>09-01-2023</font></i>
     </left>
     <left>
         <br>
@@ -593,105 +593,121 @@
 <li>Stop the Tomcat server running locally</li>
 </ol>
 <ul>
-<li>Click <strong>teminate icon</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-001.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>teminate icon</strong></li>
 </ul>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-001.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 <ol start="2">
 <li>Right click on the folder project</li>
 </ol>
 <ul>
 <li>Click <strong>Export</strong></li>
-<li>Click <strong>WAR file</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-002.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>WAR file</strong></li>
 </ul>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-002.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 <ol start="3">
 <li>In the <strong>WAR Export</strong> section</li>
 </ol>
 <ul>
 <li>Click <strong>Browser</strong></li>
 <li>Select a suitable location to store the WAR file. You will need to access this file again.</li>
-<li>Click <strong>Finish</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-003.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>Finish</strong></li>
 </ul>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-003.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 <h5 id="create-the-elastic-beanstalk-application">Create the Elastic beanstalk application</h5>
 <ol>
 <li>Go to <a href="https://console.aws.amazon.com/elasticbeanstalk/"><strong>AWS Elastic Beanstalk console</strong></a>.</li>
 </ol>
 <ul>
-<li>Click <strong>Create Aplication</strong>.
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-004.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>Create Aplication</strong>.</li>
 </ul>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-004.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 <ol start="2">
-<li>In the <strong>Application name</strong> section, type <code>TravelBuddy</code>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-005.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
-<li>In the <strong>Platform</strong> section, Select <strong>Tomcat</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-006.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
-<li>In the <strong>Application code</strong> section, select <strong>Upload your code</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-007.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
-<li>In the <strong>Source code origin</strong> section</li>
+<li>In the <strong>Application name</strong> section, type <code>TravelBuddy</code></li>
 </ol>
 <ul>
+<li>Select <strong>Tomcat</strong> is platform</li>
+</ul>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-005.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="3">
+<li>In the <strong>Application code</strong> section, select <strong>Upload your code</strong></li>
+</ol>
+<ul>
+<li>In the <strong>Source code origin</strong> section</li>
 <li>Select <strong>Local file</strong></li>
 <li>Click <strong>Choose file</strong></li>
 <li>Select file <strong>travelbuddy.war</strong> we created</li>
-<li>Click <strong>Configure more options</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-008.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>Configure more options</strong></li>
 </ul>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-006.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="4">
+<li>In the <strong>Presets</strong> section, Click <strong>High availability</strong></li>
+</ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-007.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="5">
+<li>In the <strong>Network</strong> section, Click <strong>Edit</strong></li>
+</ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-008.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 <ol start="6">
-<li>In the <strong>Presets</strong> section, Click <strong>High availability</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-009.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk">
+<li>In the <strong>VPC</strong> section, select <strong>CdkStack/DevAxNetworkVPC</strong></li>
+</ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-009.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 
 <div class="notices info" ><p>This will change the configuration to support multiple web servers behind an Elastic Load Balancer and implement auto-scaling.</p>
 </div>
-</li>
-<li>In the <strong>Network</strong> section, Click <strong>Edit</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-010.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
-<li>In the <strong>VPC</strong> section, select <strong>CdkStack/DevAxNetworkVPC</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-011.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+
+<ol start="7">
 <li>In the <strong>Load balancer settings</strong> section</li>
 </ol>
 <ul>
 <li>Select <strong>Public</strong> for <strong>Visibility</strong></li>
-<li>In the <strong>Load balancer subnets</strong> section, select 2 Public Subnets 
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-012.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>In the <strong>Load balancer subnets</strong> section, select 2 Public Subnets</li>
 </ul>
-<ol start="10">
-<li>In the <strong>Instance subnets</strong> section, select 2 Private subnets.
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-013.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-010.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="8">
+<li>In the <strong>Instance subnets</strong> section, select 2 Private subnets.</li>
 </ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-011.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 <ul>
 <li>Drag the screen down, then Click <strong>Save</strong></li>
 </ul>
-<ol start="11">
-<li>In the <strong>Security</strong> section, Click <strong>Edit</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-014.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<ol start="9">
+<li>In the <strong>Security</strong> section, Click <strong>Edit</strong></li>
+</ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-012.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="10">
 <li>In the <strong>EC2 key pair</strong> section, select key pair <strong>KPforDevAxInstances</strong></li>
 </ol>
 <ul>
-<li>Click <strong>Save</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-015.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>Save</strong></li>
 </ul>
-<ol start="13">
-<li>In the <strong>Instances</strong> section, Click <strong>Edit</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-016.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-013.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="11">
+<li>In the <strong>Instances</strong> section, Click <strong>Edit</strong></li>
+</ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-014.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="12">
 <li>In the <strong>EC2 security groups</strong> section, select the security group named <strong>DBSecurityGroup</strong></li>
 </ol>
 <ul>
-<li>Click <strong>Save</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-017.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>Save</strong></li>
 </ul>
-<ol start="15">
-<li>In the <strong>Capacity</strong> section, Click <strong>Edit</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-018.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
-<li>In the <strong>Instance type</strong> section, select <strong>t3.medium</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-019.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-015.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="13">
+<li>In the <strong>Capacity</strong> section, Click <strong>Edit</strong></li>
 </ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-016.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="14">
+<li>In the <strong>Instance type</strong> section, select <strong>t3.medium</strong></li>
+</ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-017.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
 <ul>
 <li>Drag the screen down, then Click <strong>Save</strong></li>
 </ul>
-<ol start="19">
-<li>In the <strong>Software</strong> section, Click <strong>Edit</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-020.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<ol start="15">
+<li>In the <strong>Software</strong> section, Click <strong>Edit</strong></li>
+</ol>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-018.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="16">
 <li>In the <strong>Environment properties</strong> table, add the information like the below table
 <table>
 <thead>
@@ -718,21 +734,25 @@
 </li>
 </ol>
 <ul>
-<li>Click <strong>Save</strong>
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-021.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<li>Click <strong>Save</strong></li>
 </ul>
-<ol start="21">
-<li>Drag the screen down, then Click <strong>Create app</strong>
+<p><img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-019.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></p>
+<ol start="17">
+<li>
+<p>Drag the screen down, then Click <strong>Create app</strong>
 
 <div class="notices note" ><p>Elastic Beanstalk will now proceed with creating the new Environment to run your TravelBuddy website. This will take a few minutes while an Elastic Load Balancer, EC2 instance, Launch configuration, Security Groups and more are created for you by AWS Elastic Beanstalk.</p>
 </div>
+</p>
 </li>
-<li>Once the deployment is complete</li>
+<li>
+<p>Once the deployment is complete</p>
+</li>
 </ol>
 <ul>
 <li>Click <strong>Environments</strong></li>
 <li>We will see the URL of TravelBuddy app
-<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-022.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
+<img src="/images/4-deploytoelasticbeanstalk/deploytoelasticbeanstalk-020.png?featherlight=false&amp;width=90pc" alt="Deploy to ElasticBeanstalk"></li>
 </ul>
 
 
@@ -992,19 +1012,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1654538137"></script>
-    <script src="/js/perfect-scrollbar.min.js?1654538137"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1654538137"></script>
-    <script src="/js/jquery.sticky.js?1654538137"></script>
-    <script src="/js/featherlight.min.js?1654538137"></script>
-    <script src="/js/highlight.pack.js?1654538137"></script>
+    <script src="/js/clipboard.min.js?1673319957"></script>
+    <script src="/js/perfect-scrollbar.min.js?1673319957"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1673319957"></script>
+    <script src="/js/jquery.sticky.js?1673319957"></script>
+    <script src="/js/featherlight.min.js?1673319957"></script>
+    <script src="/js/highlight.pack.js?1673319957"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1654538137"></script>
-    <script src="/js/learn.js?1654538137"></script>
-    <script src="/js/hugo-learn.js?1654538137"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1673319957"></script>
+    <script src="/js/learn.js?1673319957"></script>
+    <script src="/js/hugo-learn.js?1673319957"></script>
 
-    <link href="/mermaid/mermaid.css?1654538137" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1654538137"></script>
+    <link href="/mermaid/mermaid.css?1673319957" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1673319957"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

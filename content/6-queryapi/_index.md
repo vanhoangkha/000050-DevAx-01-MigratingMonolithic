@@ -15,26 +15,38 @@ You will use the Java SDK to inspect your AWS environment, and query for EC2 ins
 2. In the Eclipse IDE
 * Click **File** 
 * Click **Import**
+
 ![Update the application](/images/6-queryapi/queryapi-001.png?featherlight=false&width=90pc)
+
 3. In the **Import** section
 * Click **Maven**
 * Click **Existing Maven Projects**
 * Click **Next**
+
 ![Update the application](/images/6-queryapi/queryapi-002.png?featherlight=false&width=90pc)
+
 4. In the **Import Maven Projects** section, select **Browse** 
 * Choose the unzipped **EC2Report.zip** folder
 * Click **Finish**
+
 ![Update the application](/images/6-queryapi/queryapi-003.png?featherlight=false&width=90pc)
+
 5. In the Eclipse IDE, open the file **EC2Report/src/main/java/idevelop/samples/EC2Manager.java**
 * Find **ReportEC2Environment()** method
 * Change the region to your region you do this lab in.
 * Save file.
+
 ![Update the application](/images/6-queryapi/queryapi-004.png?featherlight=false&width=90pc)
+
 6. To run the app, right click on the application root in the IDE and click **Run As**
 * Click **JUnit Test**
+
 ![Update the application](/images/6-queryapi/queryapi-005.png?featherlight=false&width=90pc)
+
 7. This output shows a number of EC2 instances in the target account 
+
 ![Update the application](/images/6-queryapi/queryapi-006.png?featherlight=false&width=90pc)
+
 
 #### Optional task
 1. Explore the **pom.xml** file to ensure you understand how the dependency management works.
