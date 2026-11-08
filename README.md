@@ -1,4 +1,4 @@
-# 🏢 DevAx 01: Migrating Monolithic
+# DevAx 01: Migrating Monolithic
 
 Migrate monolithic applications to microservices on AWS.
 
@@ -8,7 +8,7 @@ This is a hands-on workshop from the **AWS First Cloud Journey** series, designe
 
 ## Workshop
 
-📖 **[Start the workshop](https://vanhoangkha.github.io/000050-DevAx-01-MigratingMonolithic/)**
+**[Start the workshop](https://vanhoangkha.github.io/000050-DevAx-01-MigratingMonolithic/)**
 
 ## Prerequisites
 
